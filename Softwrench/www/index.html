@@ -39,11 +39,23 @@
                     window.location.href = url;
                 }
             }
+            
         </script>
+        <script type="text/javascript">
+            function get_action(form) {
+                if(typeof(Storage) !== "undefined") {
+                    var url = document.getElementById("url").value;
+                    localStorage.setItem("url", url);
+                    form.action = url;
+                }
+                
+            }
+            </script>
     </head>
     <body>
         <div class="app">
-        <form>
+            
+        <form onsubmit="get_action(this);">
             Where do you want to connect to:
             <input id="url" type="url" name="swurl">
             <button type="button" onClick="storeAndConnect()">Connect</button>

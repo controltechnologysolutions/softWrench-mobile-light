@@ -38,3 +38,4 @@ xcuserdatad
 xcshareddata
 *.xccheckout
 *.xcuserstate
+.idea/

@@ -1,0 +1,12 @@
+2014-09-30 15:48:58.122 Softwrench[1621:49313] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Scott/Library/Developer/CoreSimulator/Devices/545D22F9-4A97-4601-A5FB-5D9102FE8755/data/Containers/Data/Application/0D5C0726-A0A1-4784-B81C-1A84C2C5D85A/Library/Cookies/Cookies.binarycookies
+2014-09-30 15:48:58.169 Softwrench[1621:49313] Multi-tasking -> Device: YES, App: YES
+2014-09-30 15:48:58.186 Softwrench[1621:49313] Unlimited access to network resources
+2014-09-30 15:48:58.188 Softwrench[1621:49313] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-09-30 15:48:58.503 Softwrench[1621:49313] Resetting plugins due to page load.
+2014-09-30 15:48:58.580 Softwrench[1621:49313] Finished load of: file:///Users/Scott/Library/Developer/CoreSimulator/Devices/545D22F9-4A97-4601-A5FB-5D9102FE8755/data/Containers/Bundle/Application/5E5F3C4B-C46C-4C4E-9AAD-9A13996F2D6F/Softwrench.app/www/index.html

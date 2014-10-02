@@ -81,6 +81,8 @@
 /Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile.structure-1.4.4.min.css \
 /Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile.theme-1.4.4.css \
 /Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile.theme-1.4.4.min.css \
+/Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/ajax-loader.gif \
+/Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/background.jpg \
 /Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/logo.png \
 /Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/softwrench.png \
 /Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/index.js \

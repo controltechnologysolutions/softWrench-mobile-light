@@ -24,48 +24,87 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.4.min.css"/>
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
         <meta name="msapplication-tap-highlight" content="no" />
         <title>softWrench</title>
-        <!--script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js"></script>
-        
-        <script type="text/javascript" src="js/index.js"></script-->
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" />
+        <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script>
             if (typeof(Storage) !== "undefined") {
-                var url = window.localStorage.getItem("url");
+                var url = localStorage.getItem("url");
                 document.getElementById("url").value = url;
             }
-        
+            else
+            {
+                alert("No Browser Local Storage Support ");
+            }
+            var url = localStorage.getItem("url");
+            document.getElementById("url").value = url;
             function storeAndConnect() {
                 if(typeof(Storage) !== "undefined") {
                     var url = document.getElementById("url").value;
-                    window.localStorage.setItem("url", url);
-                    window.location.href = url;
+                    localStorage.setItem("url", url);
+                     $('#loading').show();
+                   window.location.href = url;
                 }
             }
             
         </script>
-        <script type="text/javascript">
+                <script type="text/javascript">
+            
             function get_action(form) {
                 if(typeof(Storage) !== "undefined") {
                     var url = document.getElementById("url").value;
-                    window.localStorage.setItem("url", url);
+                    localStorage.setItem("url", url);
+                    $('#loading').show();
+
                     form.action = url;
+                    alert(localStorage.getItem("url"));
                 }
                 
             }
             </script>
+        <script type="text/javascript" charset="utf-8">
+            
+            // Wait for PhoneGap to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            // PhoneGap is ready
+            //
+            function onDeviceReady() {
+               // window.localStorage.setItem("key", "minhbinh");
+                var keyname = window.localStorage.getItem("url");
+               
+                window.localStorage.removeItem("url");
+                window.localStorage.clear();
+                // localStorage is now empty
+                $("input").text(keyname);
+            }
+            
+            
+            </script>
     </head>
     <body>
-        <div class="app">
-            
-        <form onsubmit="get_action(this);">
-            Where do you want to connect to:
-            <input id="url" type="url" name="swurl">
-            <button type="button" onClick="storeAndConnect()">Connect</button>
-        </form>
+        ]<div id="loading">
+            <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
         </div>
+        <div class="box">
+            <div class="logo"></div>
+            <div class="app">
+                <form onsubmit="get_action(this);">
+                    <p>Where do you want to connect to:</p>
+                    <input id="url" type="url" name="swurl">
+                        <button onClick="storeAndConnect()">Connect</button>
+                </form>
+            </div>
+        </div>
+        
     </body>
+    <script language="javascript" type="text/javascript">
+        $(window).load(function() {
+                       $('#loading').hide();   });
+        </script>
 </html>

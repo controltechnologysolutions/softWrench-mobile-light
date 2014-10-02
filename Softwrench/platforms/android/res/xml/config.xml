@@ -7,6 +7,8 @@
     <feature name="ActivityIndicator">
         <param name="android-package" value="org.apache.cordova.plugin.ActivityIndicator" />
     </feature>
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
     <name>Softwrench</name>
     <description>
         Maximo Simplified

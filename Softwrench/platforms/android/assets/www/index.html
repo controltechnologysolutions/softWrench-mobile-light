@@ -31,17 +31,8 @@
         <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js" />
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script>
-            if (typeof(Storage) !== "undefined") {
-                var url = localStorage.getItem("url");
-                document.getElementById("url").value = url;
-            }
-            else
-            {
-                alert("No Browser Local Storage Support ");
-            }
-            var url = localStorage.getItem("url");
-            document.getElementById("url").value = url;
+        <script type="text/javascript">
+            
             function storeAndConnect() {
                 if(typeof(Storage) !== "undefined") {
                     var url = document.getElementById("url").value;
@@ -65,29 +56,10 @@
                 
             }
             </script>
-        <script type="text/javascript" charset="utf-8">
-            
-            // Wait for PhoneGap to load
-            //
-            document.addEventListener("deviceready", onDeviceReady, false);
-            
-            // PhoneGap is ready
-            //
-            function onDeviceReady() {
-               // window.localStorage.setItem("key", "minhbinh");
-                var keyname = window.localStorage.getItem("url");
-               
-                window.localStorage.removeItem("url");
-                window.localStorage.clear();
-                // localStorage is now empty
-                $("input").text(keyname);
-            }
-            
-            
-            </script>
+
     </head>
     <body>
-        ]<div id="loading">
+        <div id="loading">
             <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
         </div>
         <div class="box">
@@ -100,11 +72,22 @@
                 </form>
             </div>
         </div>
-        
+        <script language="javascript" type="text/javascript">
+            $(window).load(function() {
+                           $('#loading').hide();
+                           if (typeof(Storage) !== "undefined") {
+                           var url = localStorage.getItem("url");
+                           document.getElementById("url").value = url;
+                           }
+                           else
+                           {
+                           alert("No Browser Local Storage Support ");
+                           }
+                           var url = localStorage.getItem("url");
+                          // alert(url);
+                           document.getElementById("url").value = url;});
+            </script>
     </body>
-    <script language="javascript" type="text/javascript">
-        $(window).load(function() {
-                       $('#loading').hide();   });
-        </script>
+
 
 </html>

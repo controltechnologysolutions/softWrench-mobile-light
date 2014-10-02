@@ -1,2 +1,2 @@
-/Users/Scott/Websites/cts-mobile-light/Softwrench/platforms/android/CordovaLib/ant-build/AndroidManifest.xml : \
-/Users/Scott/Websites/cts-mobile-light/Softwrench/platforms/android/CordovaLib/AndroidManifest.xml \
+/Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/CordovaLib/ant-build/AndroidManifest.xml : \
+/Users/admin/Desktop/softWrench-mobile-light/Softwrench/platforms/android/CordovaLib/AndroidManifest.xml \

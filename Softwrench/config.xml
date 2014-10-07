@@ -9,6 +9,9 @@
     <author email="info@controltechnologysolutions.com" href="http://www.controltechnologysolutions.com">
         Control Technology Solutions
     </author>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
     <access origin="http://code.jquery.com" subdomains="true" />
     <content src="index.html" />
     <access origin="*" />

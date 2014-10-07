@@ -31,27 +31,44 @@
         <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js" />
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
+                 <script type="text/javascript">
+                    var isOnline;
+                $.ajax({
+                       url: "http://www.google.com",
+                       context: document.body,
+                       error: function(jqXHR, exception) {errorMessage();
+                       isOnline=false;},
+                       success: function(){isOnline=true}
+                       });
             
-            function storeAndConnect() {
-                if(typeof(Storage) !== "undefined") {
-                    var url = document.getElementById("url").value;
-                    localStorage.setItem("url", url);
-                     $('#loading').show();
-                   window.location.href = url;
+                function errorMessage()
+                {
+                    $( "#error" ).dialog();
+                    form.action = "index.html";
                 }
-            }
-            
-        </script>
-                <script type="text/javascript">
-            
+                function storeAndConnect() {
+                    if(typeof(Storage) !== "undefined") {
+                        var url = document.getElementById("url").value;
+                        localStorage.setItem("url", url);
+                        $('#loading').show();
+                        if(isOnline)
+                        window.location.href = url;
+                        esle
+                        window.location.href = "index.html";
+                        
+                    }
+                }
+                
+
             function get_action(form) {
                 if(typeof(Storage) !== "undefined") {
                     var url = document.getElementById("url").value;
                     localStorage.setItem("url", url);
                     $('#loading').show();
-
+                    if(isOnline)
                     form.action = url;
+                    esle
+                    form.action="index.html";
                 }
                 
             }
@@ -59,6 +76,9 @@
 
     </head>
     <body>
+        <div id="error" title="Error">
+            <p>Please check your internet connection and try again.</p>
+        </div>
         <div id="loading">
             <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
         </div>
@@ -74,8 +94,9 @@
         </div>
         <script language="javascript" type="text/javascript">
             $(window).load(function() {
+                           
                            $('#loading').hide();
-                           if (typeof(Storage) !== "undefined") {
+                        if (typeof(Storage) !== "undefined") {
                            var url = localStorage.getItem("url");
                            document.getElementById("url").value = url;
                            }
@@ -84,8 +105,9 @@
                            alert("No Browser Local Storage Support ");
                            }
                            var url = localStorage.getItem("url");
-                          // alert(url);
+                           
                            document.getElementById("url").value = url;});
+                           
             </script>
     </body>
 

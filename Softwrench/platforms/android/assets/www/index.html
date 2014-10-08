@@ -32,18 +32,19 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
                  <script type="text/javascript">
-                    var isOnline;
-                $.ajax({
+                    window.isOnline;
+                window.setInterval(function(){
+                                   $.ajax({
                        url: "http://www.google.com",
                        context: document.body,
-                       error: function(jqXHR, exception) {errorMessage();
-                       isOnline=false;},
-                       success: function(){isOnline=true}
+                       error: function(jqXHR, exception) {
+                       window.isOnline=false},
+                       success: function(){window.isOnline=true}
                        });
-            
+            }, 1000);
                 function errorMessage()
                 {
-                    $( "#error" ).dialog();
+                    alert('Please check your internet connection and try again.');
                     form.action = "index.html";
                 }
                 function storeAndConnect() {
@@ -51,11 +52,13 @@
                         var url = document.getElementById("url").value;
                         localStorage.setItem("url", url);
                         $('#loading').show();
-                        if(isOnline)
+                        if(window.isOnline)
                         window.location.href = url;
-                        esle
+                        else
+                        {
+                           // alert('Please check your internet connection and try again.');
                         window.location.href = "index.html";
-                        
+                        }
                     }
                 }
                 
@@ -65,10 +68,14 @@
                     var url = document.getElementById("url").value;
                     localStorage.setItem("url", url);
                     $('#loading').show();
-                    if(isOnline)
+                    if(window.isOnline)
                     form.action = url;
-                    esle
-                    form.action="index.html";
+                    else
+                    {
+                        alert('Please check your internet connection and try again.');
+                        form.action="index.html";
+                    }
+                    
                 }
                 
             }
@@ -76,9 +83,6 @@
 
     </head>
     <body>
-        <div id="error" title="Error">
-            <p>Please check your internet connection and try again.</p>
-        </div>
         <div id="loading">
             <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
         </div>
@@ -109,6 +113,7 @@
                            document.getElementById("url").value = url;});
                            
             </script>
+
     </body>
 
 

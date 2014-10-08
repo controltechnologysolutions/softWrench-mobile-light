@@ -36,7 +36,7 @@
                 $.ajax({
                        url: "http://www.google.com",
                        context: document.body,
-                       error: function(jqXHR, exception) {errorMessage();
+                       error: function(jqXHR, exception) {
                        isOnline=false;},
                        success: function(){isOnline=true}
                        });
@@ -53,9 +53,11 @@
                         $('#loading').show();
                         if(isOnline)
                         window.location.href = url;
-                        esle
+                        else
+                        {
+                            alert('Please check your internet connection and try again.');
                         window.location.href = "index.html";
-                        
+                        }
                     }
                 }
                 
@@ -67,8 +69,11 @@
                     $('#loading').show();
                     if(isOnline)
                     form.action = url;
-                    esle
+                    else
+                    {
+                        alert('Please check your internet connection and try again.');
                     form.action="index.html";
+                    }
                 }
                 
             }

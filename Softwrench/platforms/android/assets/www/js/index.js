@@ -35,6 +35,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        alert("dkhvbisd");
+        document.addEventListener("backbutton", onBackKeyDown, false);
         //alert("In Device Ready");
     },
 //onOffline: function() {

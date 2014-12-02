@@ -28,8 +28,17 @@
     <feature name="SpinnerDialog">
         <param name="ios-package" value="CDVSpinnerDialog" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <name>Softwrench</name>
     <description>
         Maximo Simplified
@@ -38,6 +47,6 @@
         Control Technology Solutions
     </author>
     <access origin="http://code.jquery.com" subdomains="true" />
-    <content src="index.html" />
-    <access origin="*" />
+    <content src="connect.html" />
+    <access browserOnly="true" origin="*" />
 </widget>

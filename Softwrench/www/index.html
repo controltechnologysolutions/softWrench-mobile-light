@@ -27,62 +27,75 @@
         <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
         <meta name="msapplication-tap-highlight" content="no" />
         <title>softWrench</title>
+  
         <script type="text/javascript" src="js/jquery-1.11.1.min.js" />
         <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js" />
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+              <script type="text/javascript" charset="utf-8" src="cordova.js" ></script>
+        <script type="text/javascript" src="js/index.js" ></script>
+       <!-- <script type="text/javascript" src="js/childbrowser.js" ></script>-->
+
                  <script type="text/javascript">
-                    window.isOnline;
-                window.setInterval(function(){
+                    var isOnline;
+              /*  window.setInterval(function(){
                                    $.ajax({
                        url: "http://www.google.com",
                        context: document.body,
                        error: function(jqXHR, exception) {
-                       window.isOnline=false},
-                       success: function(){window.isOnline=true}
+                       isOnline=false},
+                       success: function(){isOnline=true}
                        });
-            }, 1000);
+            }, 1000);*/
                 function errorMessage()
                 {
                     alert('Please check your internet connection and try again.');
                     form.action = "index.html";
                 }
-                function storeAndConnect() {
-                    if(typeof(Storage) !== "undefined") {
-                        var url = document.getElementById("url").value;
-                        localStorage.setItem("url", url);
-                        $('#loading').show();
-                        if(window.isOnline)
-                        window.location.href = url;
-                        else
-                        {
-                           // alert('Please check your internet connection and try again.');
-                        window.location.href = "index.html";
-                        }
-                    }
-                }
-                
+                 function storeAndConnect() {
+                     if(typeof(Storage) !== "undefined") {
+                         var url = document.getElementById("url").value;
+                         localStorage.setItem("url", url);
+                         $('#loading').show();
+                         if(true)
+                         window.location.href = url;
+                         else
+                         {
+                             // alert('Please check your internet connection and try again.');
+                             window.location.href = "index.html";
+                         }
+                     }
+                 }
+                 
+                 function get_action(form) {
+                     if(typeof(Storage) !== "undefined") {
+                         var url = document.getElementById("url").value;
+                         localStorage.setItem("url", url);
+                         $('#loading').show();
+                         
 
-            function get_action(form) {
-                if(typeof(Storage) !== "undefined") {
-                    var url = document.getElementById("url").value;
-                    localStorage.setItem("url", url);
-                    $('#loading').show();
-                    if(window.isOnline)
-                    form.action = url;
-                    else
-                    {
-                        alert('Please check your internet connection and try again.');
-                        form.action="index.html";
-                    }
-                    
-                }
-                
-            }
-            </script>
-
+                         if(true)
+                         {
+                             //url = encodeURI(url);
+                             alert(url);
+                             form.action = url;
+                             
+                             //var ref = window.open(url, '_blank', 'location=no');
+                             //ref.show();
+                             
+                         }
+                         else
+                         {
+                             alert('Please check your internet connection and try again.');
+                             form.action="index.html";
+                         }
+                         
+                     }
+                     
+                 }
+                 
+        </script>
     </head>
     <body>
+        
         <div id="loading">
             <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
         </div>
@@ -91,15 +104,30 @@
             <div class="app">
                 <form onsubmit="get_action(this);">
                     <p>Where do you want to connect to:</p>
-                    <input id="url" type="url" name="swurl">
-                        <button onClick="storeAndConnect()">Connect</button>
+                    <input id="url" type="url" name="swurl" required pattern="https?://.+" value="http://demo.softwrench.net/">
+                        <button id="button_con" onsubmit="storeAndConnect();">Connect</button>
                 </form>
+                <a href="http://google.com">Test</a>
             </div>
         </div>
+        <script language="javascript" type="text/javascript">
+         /*   window.setInterval(function(){
+                               $.ajax({
+                                      url: "http://www.google.com",
+                                      context: document.body,
+                                      error: function(jqXHR, exception) {
+                                      isOnline=false},
+                                      success: function(){isOnline=true}
+                                      });
+                               }, 1000);*/
+                               
+            </script>
         <script language="javascript" type="text/javascript">
             $(window).load(function() {
                            
                            $('#loading').hide();
+                           
+                           
                         if (typeof(Storage) !== "undefined") {
                            var url = localStorage.getItem("url");
                            document.getElementById("url").value = url;
@@ -111,9 +139,8 @@
                            var url = localStorage.getItem("url");
                            
                            document.getElementById("url").value = url;});
-                           
+                         
             </script>
-
     </body>
 
 

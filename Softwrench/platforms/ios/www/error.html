@@ -6,9 +6,30 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <meta name="msapplication-tap-highlight" content="no" />
+        
         <title>softWrench</title>
+        <script type="text/javascript" charset="utf-8">
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady(){
+            document.addEventListener("backbutton", function(e){
+                                      
+                                      navigator.app.backHistory()
+                                      
+                                      }, false);
+        }
+        
+        function storeAndConnect() {
+            navigator.app.backHistory()
+        }
+
+
+
+            </script>
     </head>
     <body>
+        <button onClick="onDeviceReady()">Back</button>
+        <br/>
+        <br/><br/><br/>
         <div class="app">
            Sorry, I currently can't connect you to the softWrench server.
         </div>

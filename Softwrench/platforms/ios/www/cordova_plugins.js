@@ -20,6 +20,20 @@ module.exports = [
         "merges": [
             "window.plugins.spinnerDialog"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -27,7 +41,9 @@ module.exports.metadata =
 {
     "com.wearecocoon.cordova.plugin.networkactivity": "1.0.0",
     "org.apache.cordova.plugin.ActivityIndicator": "1.0.0",
-    "hu.dpal.phonegap.plugins.SpinnerDialog": "1.0.0"
+    "hu.dpal.phonegap.plugins.SpinnerDialog": "1.0.0",
+    "org.apache.cordova.inappbrowser": "0.5.3",
+    "org.apache.cordova.statusbar": "0.1.8"
 }
 // BOTTOM OF METADATA
 });

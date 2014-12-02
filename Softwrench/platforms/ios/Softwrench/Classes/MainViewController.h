@@ -29,8 +29,9 @@
 #import <Cordova/CDVCommandDelegateImpl.h>
 #import <Cordova/CDVCommandQueue.h>
 
-@interface MainViewController : CDVViewController
-
+@interface MainViewController : CDVViewController <UIWebViewDelegate>{
+    IBOutlet UINavigationBar *navigationBar;
+}
 @end
 
 @interface MainCommandDelegate : CDVCommandDelegateImpl

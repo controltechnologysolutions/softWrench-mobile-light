@@ -7,8 +7,18 @@
     <feature name="ActivityIndicator">
         <param name="android-package" value="org.apache.cordova.plugin.ActivityIndicator" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" onload="true" value="org.apache.cordova.statusbar.StatusBar" />
+    </feature>
+    <icon src="res/drawable/icon.png" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <name>Softwrench</name>
     <description>
         Maximo Simplified
@@ -18,5 +28,5 @@
     </author>
     <access origin="http://code.jquery.com" subdomains="true" />
     <content src="index.html" />
-    <access origin="*" />
+    <access browserOnly="true" origin="*" />
 </widget>

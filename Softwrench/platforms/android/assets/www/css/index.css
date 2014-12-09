@@ -54,6 +54,10 @@ body {
     text-align: center;
 }
 
+.back {
+    padding-top: 20px;
+}
+
 /*Landscape*/
 @media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
     .box {

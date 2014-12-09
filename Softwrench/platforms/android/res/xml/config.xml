@@ -7,9 +7,13 @@
     <feature name="ActivityIndicator">
         <param name="android-package" value="org.apache.cordova.plugin.ActivityIndicator" />
     </feature>
+    <icon src="res/drawable/icon.png" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <name>Softwrench</name>
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <name>softWrench</name>
     <description>
         Maximo Simplified
     </description>
@@ -17,6 +21,6 @@
         Control Technology Solutions
     </author>
     <access origin="http://code.jquery.com" subdomains="true" />
-    <content src="index.html" />
+    <content src="connect.html" />
     <access origin="*" />
 </widget>

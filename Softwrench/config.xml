@@ -2,7 +2,13 @@
 <widget id="com.softwrenchsolutions.sw4" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <name>softWrench</name>
+    <preference name="StatusBarOverlaysWebView" value="true"/>
+    <preference name="StatusBarBackgroundColor" value="#000000"/>
+    <preference name="StatusBarStyle" value="lightcontent"/>
+    <platform name="android">
+        <icon src="res/drawable/icon.png"/>
+    </platform>
+    <name>Softwrench</name>
     <description>
         Maximo Simplified
     </description>
@@ -13,6 +19,6 @@
         <param name="ios-package" value="CDVConnection" />
     </feature>
     <access origin="http://code.jquery.com" subdomains="true" />
-    <content src="index.html" />
+    <content src="connect.html" />
     <access origin="*" />
 </widget>

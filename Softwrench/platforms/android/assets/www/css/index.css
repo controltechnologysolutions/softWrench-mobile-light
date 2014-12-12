@@ -58,6 +58,42 @@ body {
     padding-top: 20px;
 }
 
+.signin {
+    background-color: rgba(1, 62, 91, 0.3);
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    /*width: 220px;*/
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.signin .logo {
+    /*background: url(../image/softwrench.png) no-repeat center top;*/
+    height: 64px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.signin form button[type="submit"] {
+    background: none;
+    border: #fff 2px solid;
+    color: #fff;
+    border-radius: 40px;
+}
+
+.signin form button[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+.signin form label {
+    color: #fff;
+}
+
+.test {
+    color: #fff;
+    margin-top: 40px;
+}
 /*Landscape*/
 @media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
     .box {

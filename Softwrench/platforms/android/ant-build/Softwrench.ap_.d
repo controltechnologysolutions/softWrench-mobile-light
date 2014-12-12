@@ -59,6 +59,8 @@
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/plugins \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/screen.html \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/bootstrap.css.map \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/bootstrap.min.css \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/index.css \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile-1.4.4.css \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile-1.4.4.min.css \
@@ -74,10 +76,15 @@
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile.structure-1.4.4.min.css \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile.theme-1.4.4.css \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/jquery.mobile.theme-1.4.4.min.css \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/css/style.css \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/ajax-loader.gif \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/background.jpg \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/logo.png \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/img/softwrench.png \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/angular.min.js \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/angular.min.js.map \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/app-controller.js \
+/Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/app-logging.js \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/index.js \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/jquery-1.11.1.min.js \
 /Users/admin/Development/softWrench-mobile-light/Softwrench/platforms/android/assets/www/js/jquery.mobile-1.4.4.js \

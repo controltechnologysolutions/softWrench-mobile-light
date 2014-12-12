@@ -23,19 +23,24 @@
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all' />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css" />
+        <!--link rel='stylesheet' href='css/style.css' type='text/css' media='all' /-->
         <meta name="msapplication-tap-highlight" content="no" />
         <title>softWrench</title>
         <script language="javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
         <script type="text/javascript" src="js/jquery-1.11.1.min.js" />
         <script type="text/javascript" src="js/jquery.mobile-1.4.4.min.js" />
         <script type="text/javascript" charset="utf-8" src="cordova.js" ></script>
+        <script type='text/javascript' src='js/angular.min.js'></script>
+        <script type='text/javascript' src='js/app-controller.js'></script>
+        <script type='text/javascript' src='js/app-logging.js'></script>
         <script type="text/javascript" src="js/index.js" ></script>
         
         <script type="text/javascript">
             var isOnline;
-            var repeater;
+           /* var repeater;
             function doWork() {
                 try {
                     var x = google.maps.MapTypeId.TERRAIN;
@@ -46,8 +51,9 @@
                 repeater = setTimeout(doWork, 4000);
             }
         doWork();
+            
         //alert(isOnline);
-        function storeAndConnect() {
+       /* function storeAndConnect() {
             if(typeof(Storage) !== "undefined") {
                 var url = document.getElementById("url").value;
                 localStorage.setItem("url", url);
@@ -70,7 +76,8 @@
                 {
                     window.parent.document.getElementById("backButton").disabled=false;
                     window.parent.document.getElementById("backButton").style.visibility ="visible";
-                    form.action = url+"/softwrench/SignIn?ReturnUrl=%2fsoftwrench%2f";
+                    alert(url+"/SignIn?ReturnUrl=%2fsoftwrench%2f");
+                    form.action = url+"/SignIn?ReturnUrl=%2fsoftwrench%2f";
                 }
                 else
                 {
@@ -80,38 +87,111 @@
                 
             }
             
+        }*/
+        function validate()
+        {
+            //alert(document.forms["signinForm"]["server"].value);
+            //alert(document.forms["signinForm"]["username"].value);
+            //alert(document.forms["signinForm"]["password"].value);
+            if(document.getElementById("server").value == "")
+            {
+                alert("Server should not be empty");
+                return;
+            }
+            if(document.getElementById("username").value == "")
+            {
+                alert("Username should not be empty");
+                return;
+            }
+            if(document.getElementById("password").value == "")
+            {
+                alert("Password Should not be empty");
+                return;
+            }
+            if(typeof(Storage) !== "undefined") {
+                var url = document.getElementById("server").value;
+                var user = document.getElementById("username").value;
+                var pass = document.getElementById("password").value;
+                localStorage.setItem("url", url);
+                localStorage.setItem("user", user);
+                localStorage.setItem("pass", pass);
+            }
+            return;
         }
+        
         
             </script>
     </head>
-    <body>
-        
-        <div id="loading">
+    <body ng-app="swMobile" ng-controller="SigninController">
+        <div class="container">
+            <div class="signin clearfix">
+        <!--div id="loading">
             <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
         </div>
-        <div class="box">
+        <!--div class="box"-->
             <div class="logo"></div>
             <div class="app">
-                <form onsubmit="get_action(this);">
-                    <p>Where do you want to connect to:</p>
-                    <input id="url" type="url" name="swurl" value="http://demo.softwrench.net/">
-                        <button id="button_con" onsubmit="storeAndConnect();">Connect</button>
-                        </form>
+                <form name="signinForm" ng-submit="signin()" novalidate>
+                <div class="form-group">
+                    <label class="control-label">Server</label>
+                    <input class="form-control" ng-model="server" name="server" type="url" id="server" required>
+                        </div>
+                <div ng-show="signinForm.server.$error.required && !signinForm.server.$pristine"
+                    class="alert alert-danger">
+                    Error: Server is required.
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Username</label>
+                    <input class="form-control" ng-model="username" name="username" type="text" id="username" required>
+                        </div>
+                <div ng-show="signinForm.username.$error.required && !signinForm.username.$pristine"
+                    class="alert alert-danger">
+                    Error: Username is required.
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input class="form-control" ng-model="password" name="password" type="password" id="password" required>
+                        </div>
+                <div ng-show="signinForm.password.$error.required && !signinForm.password.$pristine"
+                    class="alert alert-danger">
+                    Error: Password is required.
+                </div>
+                
+                <!--TODO: add ng-disabled="signinForm.server.$invalid || signinForm.username.$invalid || signinForm.password.$invalid"-->
+                <button class="btn" type="submit" onclick="validate()">Login</button>
+                </form>
+            <!--/div-->
+        </div>
             </div>
         </div>
         <script language="javascript" type="text/javascript">
             $(window).load(function() {
-                           $('#loading').hide();
+                           
                            if (typeof(Storage) !== "undefined") {
                            var url = localStorage.getItem("url");
-                           document.getElementById("url").value = url;
+                           var user = localStorage.getItem("user");
+                           var pass = localStorage.getItem("pass");
+                           document.getElementById("server").value = url;
+                           document.forms["signinForm"]["server"].value = url;
+                           document.getElementById("username").value = user;
+                           document.forms["signinForm"]["username"].value = user;
+                           document.getElementById("password").value = pass;
+                           document.forms["signinForm"]["password"].value = pass;
                            }
                            else
                            {
                            alert("No Browser Local Storage Support ");
                            }
                            var url = localStorage.getItem("url");
-                           document.getElementById("url").value = url;});
+                           var user = localStorage.getItem("user");
+                           var pass = localStorage.getItem("pass");
+                           document.getElementById("server").value = url;
+                           document.forms["signinForm"]["server"].value = url;
+                           document.getElementById("username").value = user;
+                           document.forms["signinForm"]["username"].value = user;
+                           document.getElementById("password").value = pass;
+                           document.forms["signinForm"]["password"].value = pass;
+                           });
             </script>
     </body>
 </html>
